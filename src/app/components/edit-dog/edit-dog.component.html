@@ -1,0 +1,160 @@
+<div class="row">
+        <div class="col-md-6">
+            <a routerLink="/dogs/{{ dogId }}" class="btn btn-link">
+            <i class="fa fa-arrow-circle-o-left"></i> Back to Dog 
+            </a>
+        </div>
+        <div class="col-md-6">
+    
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            Edit Dog
+        </div>
+        <div class="card-body">
+            <form #dogForm="ngForm" (ngSubmit)="onSubmit(dogForm)">
+                <div class="form-group">
+                  <label for="dogName">Dog's name</label>
+                  <input 
+                      type="text"
+                      class="form-control"
+                      name="dogName"
+                      #dogdogName="ngModel"
+                      [ngClass]="{'is-invalid':dogdogName.errors && dogdogName.touched}"
+                      [(ngModel)]="dog.dogName"
+                      minlength="2"
+                      required
+                  >    
+    
+                <div [hidden]="!dogdogName.errors?.required"
+                class="invalid-feedback">
+                    Name is required
+                </div>
+    
+                <div [hidden]="!dogdogName.errors?.minlength"
+                class="invalid-feedback">
+                    Must be at least 2 characters
+                </div>
+                </div>
+    
+                <div class="form-group">
+                        <label for="race">Dog's race</label>
+                        <input 
+                            type="text"
+                            class="form-control"
+                            name="race"
+                            #dogRace="ngModel"
+                            [ngClass]="{'is-invalid':dogRace.errors && dogRace.touched}"
+                            [(ngModel)]="dog.race"
+                            minlength="2"
+                            required
+                        >    
+          
+                      <div [hidden]="!dogRace.errors?.required"
+                      class="invalid-feedback">
+                          Race is required
+                      </div>
+          
+                      <div [hidden]="!dogRace.errors?.minlength"
+                      class="invalid-feedback">
+                          Must be at least 2 characters
+                      </div>
+                      </div>
+    
+                      <div class="form-group">
+                            <label for="dogAge">Dog's age</label>
+                            <input 
+                                type="text"
+                                class="form-control"
+                                name="dogAge"
+                                #dogdogAge="ngModel"
+                                [ngClass]="{'is-invalid':dogdogAge.errors && dogdogAge.touched}"
+                                [(ngModel)]="dog.dogAge"
+                                minlength="1"
+                                required
+                            >    
+              
+                          <div [hidden]="!dogdogAge.errors?.required"
+                          class="invalid-feedback">
+                              Age is required
+                          </div>
+                          </div>
+    
+                          <div class="form-group">
+                                <label for="dogInfo">About the dog</label>
+                                <input 
+                                    type="text"
+                                    class="form-control"
+                                    name="dogInfo"
+                                    #dogdogInfo="ngModel"
+                                    [ngClass]="{'is-invalid':dogdogInfo.errors && dogdogInfo.touched}"
+                                    [(ngModel)]="dog.dogInfo"
+                                    minlength="2"
+                                    required
+                                >    
+                  
+                              <div [hidden]="!dogdogInfo.errors?.required"
+                              class="invalid-feedback">
+                                  Information about the dog is required
+                              </div>
+                  
+                              <div [hidden]="!dogdogInfo.errors?.minlength"
+                              class="invalid-feedback">
+                                  Must be at least 2 characters
+                              </div>
+                              </div>
+    
+                              <div class="form-group">
+                                    <label for="dogOwner">Owner's name</label>
+                                    <input 
+                                        type="text"
+                                        class="form-control"
+                                        name="dogOwner"
+                                        #dogOwnerName="ngModel"
+                                        [ngClass]="{'is-invalid':dogOwnerName.errors && dogOwnerName.touched}"
+                                        [(ngModel)]="dog.dogOwner"
+                                        minlength="2"
+                                        required
+                                    >    
+                      
+                                  <div [hidden]="!dogOwnerName.errors?.required"
+                                  class="invalid-feedback">
+                                      Owner's name is required
+                                  </div>
+                      
+                                  <div [hidden]="!dogOwnerName.errors?.minlength"
+                                  class="invalid-feedback">
+                                      Must be at least 2 characters
+                                  </div>
+                                  </div>
+    
+                                  <div class="form-group">
+                                        <label for="ownerPhoneNumber">Owner's phone number</label>
+                                        <input 
+                                            type="text"
+                                            class="form-control"
+                                            name="ownerPhoneNumber"
+                                            #dogOwnerPhoneNumber="ngModel"
+                                            [ngClass]="{'is-invalid':dogOwnerPhoneNumber.errors && dogOwnerPhoneNumber.touched}"
+                                            [(ngModel)]="dog.ownerPhoneNumber"
+                                            minlength="8"
+                                            required
+                                        >    
+                          
+                                      <div [hidden]="!dogOwnerPhoneNumber.errors?.required"
+                                      class="invalid-feedback">
+                                          Owner's phone number is required
+                                      </div>
+                          
+                                      <div [hidden]="!dogOwnerPhoneNumber.errors?.minlength"
+                                      class="invalid-feedback">
+                                          Must be at least 8 characters
+                                      </div>
+                                      </div>
+                                    <input type="submit" value="Submit" class="btn btn-info btn-block">
+            </form>
+        </div>
+    </div>
+    
+    

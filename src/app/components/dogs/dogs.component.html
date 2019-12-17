@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2><i class="fas fa-dog"></i>Dogs</h2>
+    </div>
+</div>
+<table *ngIf="dogs?.length > 0;else noDogs" class="table table-striped">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Race</th>
+            <th></th>
+            <th></th>
+            <th style="text-align: center;">Interested</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dog of dogs">
+          <td>{{ dog.dogName }}</td>
+          <td>{{ dog.dogAge }}</td>
+          <td>{{ dog.race }}</td>
+          <td><a routerLink="dogs/{{ dog.dogId }}" class="btn btn-secondary btn-sm"><i class="fa fa-arrow-circle-o-right"></i> Details </a></td>
+          <td style="text-align: center;"><button (click)="isInterested()" class="btn"><i class="fa fa-thumbs-up"></i></button></td>
+          <td style="text-align: center;" *ngIf="adog | async as p">{{ p.likes }}</td>
+          <td style="text-align: center;"><button (click)="notInterested()" class="btn"><i class="fa fa-thumbs-down"></i></button></td>  
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #noDogs>
+    <hr>
+    <h5>There are no dogs listed</h5>
+</ng-template>
+
