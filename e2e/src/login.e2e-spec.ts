@@ -14,14 +14,6 @@ describe('Login tests', ()=> {
         browser.get('');
         element(by.id('loginDashboard')).click();
         expect(element(by.className('nav-link')).getText()).toEqual('Dashboard');
-        
-        
-
-        //Write code to login
-        
-
-        //more code here.
-        
 
         expect(true).toBeTruthy();
     })
