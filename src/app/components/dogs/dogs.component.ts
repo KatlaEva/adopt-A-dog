@@ -1,6 +1,6 @@
 import { DogService } from './../../services/dog.service';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import * as DogActions from '../actions/dog.actions'
@@ -23,6 +23,8 @@ export class DogsComponent implements OnInit {
   dogs: Dog[];
   faCoffee = faCoffee;
   adog: Observable<DogLike>
+  @Input() dog: Dog;
+  @Output() dogDeleteEmitter: EventEmitter<any> = new EventEmitter<any>();
   
 
   constructor(

@@ -3,6 +3,11 @@
         <h2><i class="fas fa-dog"></i>Dogs</h2>
     </div>
 </div>
+<style>
+    table tbody {
+        border-top: 15px solid white;
+    }
+</style>
 <table *ngIf="dogs?.length > 0;else noDogs" class="table table-striped">
     <thead class="thead-inverse">
         <tr>
@@ -24,6 +29,13 @@
           <td style="text-align: center;" *ngIf="adog | async as p">{{ p.likes }}</td>
           <td style="text-align: center;"><button (click)="notInterested()" class="btn"><i class="fa fa-thumbs-down"></i></button></td>  
         </tr>
+    </tbody>
+    <tbody>
+        <tr ng-controller="let dog of dogs">
+        <h4>Search for a dog</h4>
+        <input type="text" [(ngModel)]="searchInput" placeholder="enter search term here">
+            <tr *ngFor="let dog of dogs | filterDog: searchInput"></tr>
+        </tr>    
     </tbody>
 </table>
 

@@ -1,3 +1,5 @@
+import { UserService } from './services/user.service';
+import { FilterDog } from './components/dogs/dog.filter';
 import { DogService } from './services/dog.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -43,6 +45,7 @@ import { DogLike } from '../app/models/DogLike'
     NotFoundComponent,
     UsersComponent,
     DogDetailsComponent,
+    FilterDog
   ],
   imports: [
     BrowserModule,
@@ -55,7 +58,7 @@ import { DogLike } from '../app/models/DogLike'
     StoreModule.forRoot({adog: dogReducer }),
     FlashMessagesModule.forRoot()
   ],
-  providers: [DogService, AuthService],
+  providers: [DogService, AuthService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
