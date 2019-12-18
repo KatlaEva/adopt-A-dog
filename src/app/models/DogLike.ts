@@ -1,3 +1,3 @@
 export interface DogLike {
-    likes: number;
+    likes: number
 }

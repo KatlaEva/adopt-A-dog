@@ -51,12 +51,12 @@ export class DogService {
     return this.dog;
   }
   updateDog(dog: Dog) {
-    this.dogDoc = this.afs.doc(`dogs/${dog.dogId}`);
+    this.dogDoc = this.afs.doc(`dogs2/${dog.dogId}`);
     this.dogDoc.update(dog);
   }
   
   deleteDog(dog: Dog) {
-    this.dogDoc = this.afs.doc(`dogs/${dog.dogId}`);
+    this.dogDoc = this.afs.doc(`dogs2/${dog.dogId}`);
     this.dogDoc.delete();
   }  
 
