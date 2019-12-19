@@ -28,7 +28,6 @@ import { DogDetailsComponent } from './components/dog-details/dog-details.compon
 import { AuthService } from './services/auth.service';
 import { StoreModule } from '@ngrx/store';
 import { dogReducer } from './redux/dog.reducer'
-import { DogLike } from '../app/models/DogLike'
 
 
 @NgModule({

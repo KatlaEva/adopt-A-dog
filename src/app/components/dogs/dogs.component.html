@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let dog of dogs">
+        <tr *ngFor="let dog of dogs | filterDog: searchInput">
           <td>{{ dog.dogName }}</td>
           <td>{{ dog.dogAge }}</td>
           <td>{{ dog.race }}</td>
@@ -31,11 +31,8 @@
         </tr>
     </tbody>
     <tbody>
-        <tr ng-controller="let dog of dogs">
         <h4>Search for a dog</h4>
-        <input type="text" [(ngModel)]="searchInput" placeholder="enter search term here">
-            <tr *ngFor="let dog of dogs | filterDog: searchInput"></tr>
-        </tr>    
+        <input type="text" [(ngModel)]="searchInput" placeholder="enter search term here">   
     </tbody>
 </table>
 
