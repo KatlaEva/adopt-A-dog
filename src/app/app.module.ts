@@ -1,10 +1,12 @@
 import { UserService } from './services/user.service';
 import { FilterDog } from './components/dogs/dog.filter';
 import { DogService } from './services/dog.service';
+import { PostService } from './services/post.service'
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/Forms';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { HttpClientModule } from '@angular/common/http';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -27,7 +29,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DogDetailsComponent } from './components/dog-details/dog-details.component';
 import { AuthService } from './services/auth.service';
 import { StoreModule } from '@ngrx/store';
-import { dogReducer } from './redux/dog.reducer'
+import { dogReducer } from './redux/dog.reducer';
+import { PostsComponent } from './components/posts/posts.component'
+
 
 
 @NgModule({
@@ -44,7 +48,8 @@ import { dogReducer } from './redux/dog.reducer'
     NotFoundComponent,
     UsersComponent,
     DogDetailsComponent,
-    FilterDog
+    FilterDog,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -53,11 +58,12 @@ import { dogReducer } from './redux/dog.reducer'
     AngularFireModule.initializeApp(environment.firebase, 'adopt-A-dog'),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    HttpClientModule,
     FontAwesomeModule,
     StoreModule.forRoot({adog: dogReducer }),
     FlashMessagesModule.forRoot()
   ],
-  providers: [DogService, AuthService, UserService],
+  providers: [DogService, AuthService, UserService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

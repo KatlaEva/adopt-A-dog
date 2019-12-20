@@ -17,7 +17,7 @@ export class FilterDog implements PipeTransform {
         search = search.toLowerCase();
         return items.filter(dog => dog.dogName && dog.dogName.toLowerCase().includes(search) || 
         dog.race && dog.race.toLowerCase().includes(search) || 
-        dog.dogAge && dog.dogAge >= search);
+        dog.dogAge && dog.dogAge == search);
     }
 
 

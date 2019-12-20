@@ -21,6 +21,7 @@ export class AddDogComponent implements OnInit {
     dogId: ''
   }
 
+  //Get access to the dogForm
   @ViewChild('dogForm', {static: false}) form;
 
   constructor(

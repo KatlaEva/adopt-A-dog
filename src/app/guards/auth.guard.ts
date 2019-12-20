@@ -1,4 +1,3 @@
-import { auth } from 'firebase';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AngularFireAuth } from 'angularfire2/auth';

@@ -13,7 +13,7 @@ describe('Login tests', ()=> {
     it('Should test that e2e works', ()=> {
         browser.get('');
         element(by.id('loginDashboard')).click();
-        expect(element(by.className('nav-link')).getText()).toEqual('Dashboard');
+        expect(element(by.className('nav-link')).getText()).toEqual('Dog List');
 
         expect(true).toBeTruthy();
     })
@@ -23,7 +23,7 @@ describe('Login tests', ()=> {
 
         page.login('harpa@test.com', 'tester1234*');
 
-        expect(element(by.className('nav-link')).getText()).toEqual('Dashboard');
+        expect(element(by.className('nav-link')).getText()).toEqual('Dog Listng');
 
     });
 

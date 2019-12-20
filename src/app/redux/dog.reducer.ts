@@ -1,6 +1,5 @@
 import { DogLike } from './../models/DogLike';
 import { Dog } from './../models/Dog';
-import { Action } from '@ngrx/store';
 import * as DogActions from '../components/actions/dog.actions'
 
 

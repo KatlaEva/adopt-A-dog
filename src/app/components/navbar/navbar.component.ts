@@ -2,8 +2,6 @@ import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
-import { Dog } from '../../models/Dog';
-import { ThrowStmt } from '@angular/compiler';
 
 
 @Component({

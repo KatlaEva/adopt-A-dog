@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     private flashMessage: FlashMessagesService
      ) { }
 
+     //Check if user is logged in
   ngOnInit() {
     this.authService.getAuth().subscribe(auth => {
       if(auth) {
